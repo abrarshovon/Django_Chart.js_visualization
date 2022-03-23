@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+
+    <title>Document</title>
+   
+</head>
+<body>
+    <div>
+        <h1>Total Data = {{ si }}</h1>
+    </div>
+    <div>
+        <table id="data">
+            <tr>
+              <th>Date</th>
+              <th>Trade Code</th>
+              <th>High</th>
+              <th>Low</th>
+              <th>Open</th>
+              <th>Close</th>
+              <th>Volume</th>
+
+            </tr>
+            {% for i in data %}
+            <tr>
+               
+                  <td> {{ i.date}}</td>
+                  <td> {{ i.trade_code}}</td>
+                  <td> {{ i.high}}</td>
+                  <td> {{ i.low}}</td>
+                  <td> {{ i.open}}</td>
+                  <td> {{ i.close}}</td>
+                  <td> {{ i.volume}}</td>
+             
+            </tr>
+            {% endfor %}
+          </table>
+    </div>
+</body>
+</html>
