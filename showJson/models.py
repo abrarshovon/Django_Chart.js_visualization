@@ -1,11 +1,13 @@
 from django.db import models
 
 # Create your models here.
-class jsonModel(models.Model):
-    date= models.DateField()
-    trade_code= models.CharField(max_length=100)
-    high=models.DecimalField(max_digits = 5, decimal_places = 1)
-    low=models.DecimalField(max_digits = 5, decimal_places = 1)
-    open= models.DecimalField(max_digits = 5, decimal_places = 1)
-    close=models.DecimalField(max_digits = 5, decimal_places = 1)
-    volume= models.IntegerField()
+class JsonModel(models.Model):
+    date= models.DateField(null=True)
+    trade_code= models.TextField(null=True)
+    high=models.TextField(null=True)
+    low=models.TextField(null=True)
+    open= models.TextField(null=True)
+    close=models.TextField(null=True)
+    volume= models.TextField(null=True)
+    def __str__(self):
+        return self.trade_code
